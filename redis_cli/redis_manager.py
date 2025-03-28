@@ -19,3 +19,6 @@ if connections_count <= 10:
     print(f"L'utilisateur {email} peut se connecter.")
 else:
     print(f"L'utilisateur {email} a dépassé le quota de connexions.")
+
+
+r.zincrby("stats_connexions", 1, email)
